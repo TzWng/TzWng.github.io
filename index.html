@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- 个人主页：把本文件和 headshot.jpg 一起上传到 GitHub 仓库「用户名.github.io」即可 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tianze Wang</title>
+<meta name="description" content="Tianze Wang (王天泽), Ph.D. student in Statistics at Rutgers University, working on LLM post-training and differential privacy.">
+
+<!-- 字体来自 Google Fonts，非阻塞加载：字体没加载出来时页面会先用系统字体显示 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;display=swap"></noscript>
+
+<style>
+  :root {
+    --accent: #1f4f8a;  /* 主题色：想换颜色只改这一行 */
+    --ink: #1c1b19;
+    --text: #3a3833;
+    --muted: #6e6a62;
+    --faint: #78736b;
+    --nav: #5a5751;
+    --rule: #e8e6e1;
+    --bg: #fdfdfc;
+    --serif: 'Source Serif 4', 'Noto Serif SC', 'Songti SC', Georgia, serif;
+    --sans: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 600; }
+
+  .page { min-height: 100vh; display: flex; flex-direction: column; }
+  .wrap { width: 100%; max-width: 860px; margin-left: auto; margin-right: auto; padding-left: 28px; padding-right: 28px; }
+
+  /* 顶部导航 */
+  .site-header { border-bottom: 1px solid var(--rule); }
+  .bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0 20px; padding-top: 8px; padding-bottom: 8px; }
+  .site-name { padding: 10px 0; font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); }
+  .nav { display: flex; gap: 26px; font-size: 14px; font-weight: 500; }
+  .nav a { padding: 10px 0; color: var(--nav); }
+  .nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+  /* 个人简介 */
+  .content { flex: 1; padding-top: 48px; padding-bottom: 24px; }
+  .intro { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; }
+  .intro-text { flex: 1; min-width: 280px; }
+  h1 { margin: 0 0 4px; font-family: var(--serif); font-size: 34px; font-weight: 600; line-height: 1.15; }
+  h1 .zh { font-weight: 400; }
+  .role { margin: 0 0 18px; font-size: 15px; color: var(--faint); }
+  .bio { margin: 0; color: var(--text); text-wrap: pretty; }
+  .contact { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-size: 14px; font-weight: 500; }
+  .headshot { display: block; flex: none; width: 168px; height: 200px; object-fit: cover; border-radius: 8px; }
+
+  /* 论文列表 */
+  .section { margin-top: 40px; }
+  h2 { margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 21px; font-weight: 600; line-height: 1.3; }
+  .year { margin: 26px 0 12px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.65; color: var(--faint); }
+  h2 + .year { margin-top: 0; }
+  .pubs { display: grid; gap: 18px; font-size: 16px; }
+  .pub-title { font-weight: 600; color: var(--ink); text-wrap: pretty; }
+  .pub-authors { color: var(--muted); }
+  .pub-authors strong { color: var(--text); }
+  .pub-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; font-weight: 500; }
+  .note { margin: 22px 0 0; font-size: 14px; color: var(--faint); }
+
+  /* 页脚 */
+  .site-footer { margin-top: 48px; border-top: 1px solid var(--rule); }
+  .site-footer p { margin-top: 0; margin-bottom: 0; padding-top: 18px; padding-bottom: 18px; font-size: 13px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="page" id="top">
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="site-name" href="#top">Tianze Wang</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#top" aria-current="page">Home</a>
+        <a href="#publications">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content">
+
+    <div class="intro">
+      <div class="intro-text">
+        <h1>Tianze Wang <span class="zh" lang="zh-CN">王天泽</span></h1>
+        <p class="role">Ph.D. Student in Statistics · Rutgers University</p>
+        <p class="bio">I am a fifth-year Ph.D. student in Statistics at Rutgers University, advised by Prof. <a href="https://linjunz.github.io/">Linjun Zhang</a>. My research focuses on <strong>LLM post-training</strong> and <strong>differential privacy</strong>.</p>
+        <div class="contact">
+          <a href="mailto:tianze.wang@rutgers.edu">tianze.wang@rutgers.edu</a>
+          <a href="https://scholar.google.com/citations?user=GIj7lVkAAAAJ&amp;hl=en">Google Scholar</a>
+        </div>
+      </div>
+      <!-- 换头像：上传一张同名的 headshot.jpg 覆盖旧文件即可 -->
+      <img class="headshot" src="headshot.jpg" alt="Tianze Wang" width="168" height="200">
+    </div>
+
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <!-- 加论文：复制一个 <div class="pub"> … </div> 块，改标题、作者和链接；名字放在 <strong> 里会加粗 -->
+
+      <h3 class="year">2026</h3>
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">Dr. OPD: Learning What to Follow for Optimal On-Policy Distillation of Large Language Models</div>
+          <div class="pub-authors">Zhenyu Wang*, <strong>Tianze Wang</strong>*, Linjun Zhang, Yifan Hu · Preprint</div>
+        </div>
+        <div class="pub">
+          <div class="pub-title">Towards Hyperparameter Transfer for Differentially Private Optimization</div>
+          <div class="pub-authors"><strong>Tianze Wang</strong>*, Zhiqi Bu*, Linjun Zhang · <em>NeurIPS 2026</em></div>
+        </div>
+        <div class="pub">
+          <div class="pub-title">Secret-Protected Evolution for Differentially Private Synthetic Text Generation</div>
+          <div class="pub-authors"><strong>Tianze Wang</strong>*, Zhaoyu Chen*, Jian Du, Yingtai Xiao, Linjun Zhang, Qiang Yan · <em>ICLR 2026</em></div>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2510.10990">paper</a></div>
+        </div>
+      </div>
+
+      <h3 class="year">2025</h3>
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment</div>
+          <div class="pub-authors"><strong>Tianze Wang</strong>, Dongnan Gui, Yifan Hu, Shuhang Lin, Linjun Zhang · <em>ICML 2025</em></div>
+          <div class="pub-links"><a href="https://proceedings.mlr.press/v267/wang25af.html">paper</a></div>
+        </div>
+        <div class="pub">
+          <div class="pub-title">MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models</div>
+          <div class="pub-authors">Peng Xia, Kangyu Zhu, Haoran Li, <strong>Tianze Wang</strong>, Weijia Shi, Sheng Wang, Linjun Zhang, James Zou, Huaxiu Yao · <em>ICLR 2025</em></div>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2410.13085">paper</a><a href="https://github.com/richard-peng-xia/MMed-RAG">code</a></div>
+        </div>
+        <div class="pub">
+          <div class="pub-title">RoseRAG: Robust Retrieval-augmented Generation with Small-scale LLMs via Margin-aware Preference Optimization</div>
+          <div class="pub-authors">Tianci Liu, Haoxiang Jiang, <strong>Tianze Wang</strong>, Ran Xu, Yue Yu, Linjun Zhang, Tuo Zhao, Haoyu Wang · <em>Findings of ACL 2025</em></div>
+          <div class="pub-links"><a href="https://aclanthology.org/2025.findings-acl.676/">paper</a></div>
+        </div>
+      </div>
+
+      <h3 class="year">2023</h3>
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">Unbiased Multilevel Monte Carlo Methods for Intractable Distributions: MLMC Meets MCMC</div>
+          <div class="pub-authors"><strong>Tianze Wang</strong>, Guanyang Wang · <em>Journal of Machine Learning Research</em></div>
+          <div class="pub-links"><a href="https://jmlr.org/papers/v24/22-1468.html">paper</a></div>
+        </div>
+      </div>
+
+      <p class="note">* Equal contribution</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="wrap">© 2026 Tianze Wang <span lang="zh-CN">王天泽</span></p>
+  </footer>
+
+</div>
+</body>
+</html>
